@@ -1,0 +1,33 @@
+.navbar {
+  background-color: #3e5c76; /* Set your desired background color */
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+  margin: 5px;
+  margin-left: 1.5rem;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 20px; /* Adjust spacing between links */
+  background-color: #f0ebd8;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-right: 5px;
+  border-radius: 6px;
+}
+
+a {
+  text-decoration: none;
+  color: #0d1321; /* Set your desired text color */
+  font-weight: bold;
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+/* Style the active link */
+a.router-link-active {
+  border-bottom: 2px solid #fff; /* Highlight active link with a bottom border */
+}

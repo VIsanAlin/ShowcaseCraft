@@ -1,14 +1,32 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [CommonModule, RouterModule, HomeComponent],
+  template: `
+    <main>
+      <section class="navbar">
+        <ul>
+          <li>
+            <a [routerLink]="['/']"> Display Current Tasks </a>
+          </li>
+          <li>
+            <a [routerLink]="['/add']">Adding Tasks </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  `,
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'angular-crud';
+  title = 'Homepage';
 }

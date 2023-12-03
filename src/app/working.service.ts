@@ -17,16 +17,35 @@ export class WorkingService {
     return (await data.json()) ?? [];
   }
 
-  submitWork(
+  // Adding New Tasks
+  async submitWork(
     title: string,
     description: string,
     linkUrl: string,
     imgUrl: string,
     hidden: boolean
-  ) {
-    console.log(
-      `Submited Work : title: ${title} description: ${description} linkUrl: ${linkUrl}
-      imgUrl: ${imgUrl} hidden: ${hidden}`
-    );
+  ): Promise<void> {
+    const newTask: DisplayWork = {
+      id: this.generateRandomId(),
+      title,
+      description,
+      linkUrl,
+      imgUrl,
+      hidden,
+    };
+    await fetch(this.url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newTask),
+    });
+  }
+  private generateRandomId(): number {
+    return Math.floor(Math.random() * 1000);
+  }
+
+  // Delete Task
+
+  delete() {
+    console.log('Delete the task');
   }
 }

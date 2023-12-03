@@ -1,5 +1,42 @@
-.listing {
+.content {
   background-color: #3e5c76;
+  height: 100vh;
+  padding-top: 2rem;
+}
+
+.detailsHead {
+  display: flex;
+  max-width: 100%;
+}
+
+.action-btn {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  display: flex;
+  max-width: 8rem;
+  max-height: 2rem;
+}
+
+.action-btn > .modify {
+  background-color: #f0edb8;
+  color: #0d1321;
+}
+.action-btn > .modify:hover {
+  background-color: #3e5c76;
+}
+
+.action-btn > .delete {
+  background-color: #f0edb8;
+  color: #0d1321;
+}
+.action-btn > .delete:hover {
+  background-color: red;
+}
+
+.listing {
+  max-width: 75%;
+  margin: auto;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #0d1321;
@@ -44,22 +81,6 @@
 .listing-apply .section-heading {
   font-size: 18px;
   margin-bottom: 15px;
-}
-
-.action-btn {
-  display: flex;
-  flex-direction: column;
-  max-width: 8rem;
-}
-
-.action-btn > .modify {
-  background-color: #f0edb8;
-  color: #0d1321;
-}
-
-.action-btn > .delete {
-  background-color: red;
-  color: #f0edb8;
 }
 
 label {

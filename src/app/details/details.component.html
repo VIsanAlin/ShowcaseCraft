@@ -1,9 +1,20 @@
 <main class="main">
   <div class="content">
     <article class="listing">
-      <section class="">
+      <section class="detailsHead">
         <h2 class="listing-heading">{{ displayWork?.title }}</h2>
-
+        <section class="action-btn">
+          <button class="modify">
+            <a [routerLink]="['/modify', DisplayWorkId]"
+              ><img src="assets/edit.svg"
+            /></a>
+          </button>
+          <button class="delete" (click)="delete()">
+            <img src="assets/delete.svg" />
+          </button>
+        </section>
+      </section>
+      <section>
         <img
           class="listing-photo"
           [src]="displayWork?.imgUrl"
@@ -21,12 +32,6 @@
             {{ displayWork?.linkUrl }}
           </a>
         </p>
-      </section>
-      <section class="action-btn">
-        <button class="modify">
-          <a [routerLink]="['/modify', DisplayWorkId]">Modify Task </a>
-        </button>
-        <button class="delete" (click)="delete()">Delete Task</button>
       </section>
     </article>
   </div>

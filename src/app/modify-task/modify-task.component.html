@@ -1,15 +1,15 @@
 <article>
-  <h2 class="section-heading">Add New Task</h2>
+  <h2 class="section-heading">Edit Task</h2>
   <form [formGroup]="modifyForm" (submit)="modifyTask()" novalidate>
-    <label for="title">Title</label>
+    <label for="title">New Title</label>
     <input id="title" type="text" formControlName="title" />
     <!-- Add required validator for other input fields as needed -->
-    <label for="description">Description</label>
+    <label for="description">New Description</label>
     <input id="description" type="text" formControlName="description" />
-    <label for="linkUrl">Link</label>
+    <label for="linkUrl">Other Link</label>
     <input id="linkUrl" type="text" formControlName="linkUrl" />
-    <label for="imgUrl">Add Images</label>
+    <label for="imgUrl">Add New Image</label>
     <input id="imgUrl" type="text" formControlName="imgUrl" />
-    <button type="submit" class="primary">Add new task</button>
+    <button type="submit" class="primary">Modify Task</button>
   </form>
 </article>

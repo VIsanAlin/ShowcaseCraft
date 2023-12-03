@@ -1,9 +1,26 @@
+.list-grid {
+  display: flex;
+  background-color: #f0edb8;
+  fill: #3e5c76;
+  transition: fill 0.3 ease;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 50px;
+  border-radius: 10px;
+  max-width: fit-content;
+}
+.activeView {
+  background-color: #3e5c76;
+  border-radius: 10px;
+  fill: #f0edb8;
+  transition: fill 0.5 ease;
+}
 .results {
   display: grid;
   column-gap: 14px;
   row-gap: 14px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
-  margin-top: 50px;
+  margin-top: 20px;
   justify-content: space-around;
 }
 input[type="text"] {
@@ -18,8 +35,6 @@ button {
   padding: 10px;
   border: solid 1px var(--primary-color);
   background: var(--primary-color);
-  color: white;
-  border-radius: 8px;
 }
 @media (min-width: 500px) and (max-width: 768px) {
   .results {

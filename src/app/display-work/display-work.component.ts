@@ -8,7 +8,10 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <section class="listing">
+    <section
+      class="listing"
+      [ngClass]="{ 'grid-view': isGridView, 'list-view': !isGridView }"
+    >
       <img
         class="listing-photo"
         [src]="displayWork.imgUrl"
@@ -30,4 +33,9 @@ import { RouterModule } from '@angular/router';
 })
 export class DisplayWorkComponent {
   @Input() displayWork!: DisplayWork;
+
+  isGridView = true;
+  toggleViewMode() {
+    this.isGridView = !this.isGridView;
+  }
 }

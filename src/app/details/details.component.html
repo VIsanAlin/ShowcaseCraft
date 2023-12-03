@@ -23,7 +23,9 @@
         </p>
       </section>
       <section class="action-btn">
-        <button class="modify">Modify Task</button>
+        <button class="modify">
+          <a [routerLink]="['/modify', DisplayWorkId]">Modify Task </a>
+        </button>
         <button class="delete" (click)="delete()">Delete Task</button>
       </section>
     </article>

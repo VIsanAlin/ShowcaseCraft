@@ -33,6 +33,7 @@ export class WorkingService {
       imgUrl,
       hidden,
     };
+    console.log(`${newTask}`);
     await fetch(this.url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -43,9 +44,38 @@ export class WorkingService {
     return Math.floor(Math.random() * 1000);
   }
 
-  // Delete Task
+  // Update Task
+  async modifyTask(
+    id: number,
+    title: string,
+    description: string,
+    linkUrl: string,
+    imgUrl: string,
+    hidden: boolean
+  ) {
+    const updatedTask: DisplayWork = {
+      id,
+      title,
+      description,
+      linkUrl,
+      imgUrl,
+      hidden,
+    };
+    console.log(`${updatedTask}`);
+    const updatedUrl = `${this.url}/${id}`;
+    await fetch(updatedUrl, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedTask),
+    });
+  }
 
-  delete() {
-    console.log('Delete the task');
+  // Delete Task
+  async delete(id: number): Promise<void> {
+    const deleteUrl = `${this.url}/${id}`;
+    await fetch(deleteUrl, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }

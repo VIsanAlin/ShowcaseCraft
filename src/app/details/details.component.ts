@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { WorkingService } from '../working.service';
 import { DisplayWork } from '../displaywork';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })
@@ -22,8 +22,12 @@ export class DetailsComponent {
       this.displayWork = displayWork;
     });
   }
-  delete() {
+  modify() {
+    console.log('Redirecting to modify task');
+  }
+  delete(): void {
     console.log('Delete the task');
     console.log(`${this.DisplayWorkId}`);
+    this.workingService.delete(this.DisplayWorkId);
   }
 }

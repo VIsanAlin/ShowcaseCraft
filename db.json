@@ -55,6 +55,31 @@
       "linkUrl": "https://gaming-platform-tawny.vercel.app",
       "imgUrl": "https://i.ibb.co/vcWmb0Z/Ex1.png",
       "hidden": false
+    },
+    {
+      "id": 396,
+      "title": "First Try With Uploading ",
+      "description": "Trying to upload a new image with filepond",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "https://i.ibb.co/vcWmb0Z/Ex1.png",
+      "hidden": false
+    },
+    {
+      "id": 786,
+      "title": "Second try",
+      "description": "A second try to add image with filepond",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "https://i.ibb.co/vcWmb0Z/Ex1.png",
+      "hidden": false
+    },
+    {
+      "id": 422,
+      "title": "Reverting back",
+      "description": "Reverting back before implementing filepond",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "https://i.ibb.co/vcWmb0Z/Ex1.png",
+      "hidden": false
     }
-  ]
+  ],
+  "uploads": []
 }

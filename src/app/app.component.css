@@ -1,6 +1,20 @@
+main {
+}
+
 .navbar {
   background-color: #3e5c76; /* Set your desired background color */
-  padding: 10px;
+  padding: 15px;
+}
+
+.navbar-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 15px;
+}
+
+.content {
+  max-width: 1440px; /* Set the maximum width */
+  margin: 0 auto;
 }
 
 ul {
@@ -22,6 +36,7 @@ li {
 
 a {
   text-decoration: none;
+  text-align: center;
   color: #0d1321; /* Set your desired text color */
   font-weight: bold;
   font-size: 16px; /* Adjust font size as needed */

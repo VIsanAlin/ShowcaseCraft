@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
   template: `
     <main>
       <section class="navbar">
-        <ul>
+        <ul class="navbar-content">
           <li>
             <a [routerLink]="['/']"> Display Current Tasks </a>
           </li>

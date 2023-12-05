@@ -18,15 +18,18 @@ import { RouterModule } from '@angular/router';
         alt=" {{ displayWork.title }}"
         crossorigin
       />
-      <h2 class="listing-heading">{{ displayWork.title }}</h2>
-      <p class="listing-location">
-        {{ displayWork.description }}, {{ displayWork.linkUrl }}
-      </p>
-      <a
-        [routerLink]="['/details', displayWork.id]"
-        routerLinkActive="router-link-active"
-        >Learn More
-      </a>
+      <div class="task-content">
+        <h2 class="listing-heading">{{ displayWork.title }}</h2>
+        <p class="listing-location">
+          {{ displayWork.description }}
+        </p>
+        <a [href]="displayWork.linkUrl" target="_blank">Customer Link </a>
+        <a
+          [routerLink]="['/details', displayWork.id]"
+          routerLinkActive="router-link-active"
+          >Learn More
+        </a>
+      </div>
     </section>
   `,
   styleUrl: './display-work.component.css',
@@ -34,8 +37,5 @@ import { RouterModule } from '@angular/router';
 export class DisplayWorkComponent {
   @Input() displayWork!: DisplayWork;
 
-  isGridView = true;
-  toggleViewMode() {
-    this.isGridView = !this.isGridView;
-  }
+  @Input() isGridView = true;
 }

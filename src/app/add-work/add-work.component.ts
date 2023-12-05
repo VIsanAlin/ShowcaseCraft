@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { WorkingService } from '../working.service';
 import {
   FormControl,
@@ -8,30 +8,26 @@ import {
   Validators,
 } from '@angular/forms';
 
+// import filepond module
+import { FilePondModule, registerPlugin } from 'ngx-filepond';
+import { FilePondOptions } from 'filepond';
+
+// import and register filepond file type validation plugin
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+registerPlugin(FilePondPluginFileValidateType);
+
 @Component({
   selector: 'app-add-work',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  template: `<article>
-    <h2 class="section-heading">Add New Task</h2>
-    <form [formGroup]="applyForm" (submit)="submitWork()" novalidate>
-      <label for="title">Title</label>
-      <input id="title" type="text" formControlName="title" />
-      <!-- Add required validator for other input fields as needed -->
-      <label for="description">Description</label>
-      <input id="description" type="text" formControlName="description" />
-      <label for="linkUrl">Link</label>
-      <input id="linkUrl" type="text" formControlName="linkUrl" />
-      <label for="imgUrl">Add Images</label>
-      <input id="imgUrl" type="text" formControlName="imgUrl" />
-      <button type="submit" class="primary" [disabled]="!applyForm.valid">
-        Add new task
-      </button>
-    </form>
-  </article>`,
+  imports: [CommonModule, ReactiveFormsModule, FilePondModule],
+  templateUrl: './add-work.component.html',
   styleUrl: './add-work.component.css',
 })
 export class AddWorkComponent {
+  // File Pond
+
+  //
+
   workingService = inject(WorkingService);
 
   applyForm = new FormGroup({

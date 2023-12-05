@@ -11,7 +11,10 @@ import { WorkingService } from '../working.service';
   template: `
     <section>
       <section class="list-grid">
-        <button (click)="toggleViewMode()" class="activeView">
+        <button
+          (click)="toggleViewMode('grid')"
+          [class.activeView]="viewMode === 'grid'"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24"
@@ -24,7 +27,10 @@ import { WorkingService } from '../working.service';
           </svg>
         </button>
         <hr />
-        <button (click)="toggleViewMode()" class="">
+        <button
+          (click)="toggleViewMode('list')"
+          [class.activeView]="viewMode === 'list'"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24"
@@ -37,10 +43,16 @@ import { WorkingService } from '../working.service';
           </svg>
         </button>
       </section>
-      <section class="results">
+      <section
+        [ngClass]="{
+          results: viewMode === 'grid',
+          'results-list-view': viewMode === 'list'
+        }"
+      >
         <app-display-work
           *ngFor="let displayWork of displayWorkList"
           [displayWork]="displayWork"
+          [isGridView]="viewMode === 'grid'"
         ></app-display-work>
       </section>
     </section>
@@ -50,9 +62,12 @@ import { WorkingService } from '../working.service';
 export class HomeComponent {
   displayWorkList: DisplayWork[] = [];
   workingService: WorkingService = inject(WorkingService);
+  viewMode: 'grid' | 'list' = 'grid';
 
-  toggleViewMode() {
-    console.log(`Changing view mode`);
+  toggleViewMode(mode: 'grid' | 'list') {
+    this.viewMode = mode;
+
+    console.log(this.viewMode);
   }
   constructor() {
     this.workingService.getAllTasks().then((displayWorkList: DisplayWork[]) => {

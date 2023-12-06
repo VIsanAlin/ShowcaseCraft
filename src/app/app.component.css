@@ -26,20 +26,27 @@ ul {
 }
 
 li {
-  margin-right: 20px; /* Adjust spacing between links */
+  margin-right: 20px;
   background-color: #f0ebd8;
-  padding-left: 5px;
-  padding-top: 5px;
-  padding-right: 5px;
+  padding: 10px;
   border-radius: 6px;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+li:hover {
+  background-color: #d1d1d1; /* Change background color on hover */
 }
 
 a {
   text-decoration: none;
-  text-align: center;
-  color: #0d1321; /* Set your desired text color */
+  color: #0d1321;
   font-weight: bold;
-  font-size: 16px; /* Adjust font size as needed */
+  font-size: 16px;
+  transition: color 0.3s ease; /* Add a smooth transition effect */
+}
+
+a:hover {
+  color: #3e5c76; /* Change text color on hover */
 }
 
 /* Style the active link */

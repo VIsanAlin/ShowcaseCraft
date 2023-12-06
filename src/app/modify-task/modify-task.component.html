@@ -10,6 +10,8 @@
     <input id="linkUrl" type="text" formControlName="linkUrl" />
     <label for="imgUrl">Add New Image</label>
     <input id="imgUrl" type="text" formControlName="imgUrl" />
-    <button type="submit" class="primary">Modify Task</button>
+    <button type="submit" class="primary" [disabled]="!modifyForm.valid">
+      Modify Task
+    </button>
   </form>
 </article>

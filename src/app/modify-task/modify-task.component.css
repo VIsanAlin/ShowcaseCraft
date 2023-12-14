@@ -19,7 +19,8 @@ label {
   color: #555; /* Set your desired label text color */
 }
 
-input {
+input,
+textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -40,4 +41,30 @@ button.primary {
 
 button.primary:hover {
   background-color: #2077b3; /* Set your desired button color on hover */
+}
+
+.error-box {
+  background-color: #f0ebd8;
+  border: 1px solid #d3c0a9;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #333; /* Set your desired text color */
+}
+
+.hidden-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.checkbox-container {
+  position: relative;
+  margin-left: 10px; /* Adjust margin as needed */
+}
+
+.uploadedImg {
+  width: 200px;
+  height: auto;
 }

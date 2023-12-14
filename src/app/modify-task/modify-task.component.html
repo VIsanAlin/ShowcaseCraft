@@ -1,17 +1,91 @@
 <article>
   <h2 class="section-heading">Edit Task</h2>
   <form [formGroup]="modifyForm" (submit)="modifyTask()" novalidate>
-    <label for="title">New Title</label>
-    <input id="title" type="text" formControlName="title" />
-    <!-- Add required validator for other input fields as needed -->
-    <label for="description">New Description</label>
-    <input id="description" type="text" formControlName="description" />
-    <label for="linkUrl">Other Link</label>
-    <input id="linkUrl" type="text" formControlName="linkUrl" />
-    <label for="imgUrl">Add New Image</label>
-    <input id="imgUrl" type="text" formControlName="imgUrl" />
+    <!-- Title -->
+    <label for="title">Task Title</label>
+    <input
+      id="title"
+      type="text"
+      formControlName="title"
+      placeholder="Enter Task title"
+    />
+    <div
+      class="error-box"
+      *ngIf="modifyForm.get('title')?.hasError('required')"
+    >
+      Title is required
+    </div>
+    <div
+      class="error-box"
+      *ngIf="modifyForm.get('title')?.hasError('maxlength')"
+    >
+      Max Length Reached
+    </div>
+
+    <!-- Description -->
+    <label for="description">Task Description</label>
+    <textarea id="description" formControlName="description"></textarea>
+    <div
+      class="error-box"
+      *ngIf="modifyForm.get('description')?.hasError('required')"
+    >
+      Description is required
+    </div>
+    <div
+      class="error-box"
+      *ngIf="modifyForm.get('description')?.hasError('maxlength')"
+    >
+      Max Length Reached
+    </div>
+
+    <!-- Link -->
+    <label for="linkUrl">Task Link</label>
+    <input
+      id="linkUrl"
+      type="text"
+      formControlName="linkUrl"
+      placeholder="Enter Task Link"
+    />
+    <div
+      class="error-box"
+      *ngIf="modifyForm.get('linkUrl')?.hasError('required')"
+    >
+      Customer Link is required
+    </div>
+    <div
+      class="error-box"
+      *ngIf="modifyForm.get('linkUrl')?.hasError('invalidUrl')"
+    >
+      Invalid URL
+    </div>
+
+    <!-- Image -->
+    <label for="imgUrl">Task Images</label>
+    <input
+      id="imgUrl"
+      type="text"
+      formControlName="imgUrl"
+      placeholder="Enter task image URL"
+    />
+
+    <div
+      class="error-box"
+      *ngIf="modifyForm.get('imgUrl')?.hasError('required')"
+    >
+      Image Link is required
+    </div>
+
+    <!-- Hidden -->
+    <div class="hidden-checkbox">
+      <label for="hidden">Hidden</label>
+      <div class="checkbox-container">
+        <input id="hidden" type="checkbox" formControlName="hidden" />
+      </div>
+    </div>
+
+    <!-- Finish -->
     <button type="submit" class="primary" [disabled]="!modifyForm.valid">
-      Modify Task
+      Add new task
     </button>
   </form>
 </article>

@@ -49,14 +49,6 @@
       "hidden": false
     },
     {
-      "id": 396,
-      "title": "First Try With Uploading ",
-      "description": "Trying to upload a new image with filepond",
-      "linkUrl": "https://gaming-platform-tawny.vercel.app",
-      "imgUrl": "https://i.ibb.co/vcWmb0Z/Ex1.png",
-      "hidden": false
-    },
-    {
       "id": 786,
       "title": "Second try",
       "description": "A second try to add image with filepond",
@@ -71,6 +63,22 @@
       "linkUrl": "https://gaming-platform-tawny.vercel.app",
       "imgUrl": "https://i.ibb.co/vcWmb0Z/Ex1.png",
       "hidden": false
+    },
+    {
+      "id": 845,
+      "title": "Upload Functional",
+      "description": "The upload is functional",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/witchitv3.jpg",
+      "hidden": true
+    },
+    {
+      "id": 967,
+      "title": "Entitled",
+      "description": "Description",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/eldenring1920vTitle.jpg",
+      "hidden": true
     }
   ],
   "uploads": []

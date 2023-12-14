@@ -1,3 +1,18 @@
+.btn-container {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.btn-container > button {
+  margin-right: 5px;
+  background-color: #3e5c76;
+  fill: #f0edb8;
+  border-radius: 10px;
+}
+
 .list-grid {
   display: flex;
   background-color: #f0edb8;

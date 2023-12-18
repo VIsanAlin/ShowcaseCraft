@@ -29,7 +29,7 @@ section.listing a::after {
 }
 
 .list-view {
-  max-width: 25rem;
+  max-width: max-content;
   height: 200px; /* Set a fixed height for the list-view section */
   overflow: hidden; /* Hide content that exceeds the height */
   margin: 0 auto;

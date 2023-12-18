@@ -36,12 +36,12 @@
     </div>
 
     <!-- Link -->
-    <label for="linkUrl">Task Link</label>
+    <label for="linkUrl">Task Customer Link</label>
     <input
       id="linkUrl"
       type="text"
       formControlName="linkUrl"
-      placeholder="Enter Task Link"
+      placeholder="Enter Customer Link"
     />
     <div
       class="error-box"
@@ -57,12 +57,12 @@
     </div>
 
     <!-- Image -->
-    <label for="imgUrl">Task Images</label>
+    <label for="imgUrl">Task Image</label>
     <input
       id="imgUrl"
       type="text"
       formControlName="imgUrl"
-      placeholder="Enter task image URL"
+      placeholder="Upload Task Image URL"
     />
     <ngx-file-drop
       dropZoneLabel="Drop files here"
@@ -74,13 +74,17 @@
         ngx-file-drop-content-tmp
         let-openFileSelector="openFileSelector"
       >
-        Optional custom content that replaces the entire default content.
+        <div *ngIf="uploadedImageUrl">
+          <img
+            class="uploadedImg"
+            [src]="uploadedImageUrl"
+            alt="Uploaded Image"
+          />
+        </div>
         <button type="button" (click)="openFileSelector()">Browse Files</button>
       </ng-template>
     </ngx-file-drop>
-    <div *ngIf="uploadedImageUrl">
-      <img class="uploadedImg" [src]="uploadedImageUrl" alt="Uploaded Image" />
-    </div>
+
     <div
       class="error-box"
       *ngIf="applyForm.get('imgUrl')?.hasError('required')"

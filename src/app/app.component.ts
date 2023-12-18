@@ -7,24 +7,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterModule, HomeComponent],
-  template: `
-    <main>
-      <section class="navbar">
-        <ul class="navbar-content">
-          <li>
-            <a [routerLink]="['/']"> Display Current Tasks </a>
-          </li>
-          <li>
-            <a [routerLink]="['/add']">Adding Tasks </a>
-          </li>
-        </ul>
-      </section>
-
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
-    </main>
-  `,
+  templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {

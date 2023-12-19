@@ -1,20 +1,23 @@
-<div>
-  <section class="listing">
-    <img
-      class="listing-photo"
-      [src]="displayWork.imgUrl"
-      alt=" {{ displayWork.title }}"
-      crossorigin
-    />
-    <h2 class="listing-heading">{{ displayWork.title }}</h2>
-    <p class="listing-location">
-      {{ displayWork.description }}, {{ displayWork.linkUrl }}
+<section
+  class="task"
+  [ngClass]="{ 'grid-view': isGridView, 'list-view': !isGridView }"
+>
+  <img
+    class="task-photo"
+    [src]="displayWork.imgUrl"
+    alt=" {{ displayWork.title }}"
+    crossorigin
+  />
+  <div class="task-content">
+    <p class="task-title">{{ displayWork.title }}</p>
+    <p class="task-description">
+      {{ displayWork.description }}
     </p>
+    <a [href]="displayWork.linkUrl" target="_blank">Customer Link </a>
     <a
       [routerLink]="['/details', displayWork.id]"
       routerLinkActive="router-link-active"
-    >
-      More details
+      >Learn More
     </a>
-  </section>
-</div>
+  </div>
+</section>

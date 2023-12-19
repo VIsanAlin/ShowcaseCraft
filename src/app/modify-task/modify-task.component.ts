@@ -133,6 +133,7 @@ export class ModifyTaskComponent implements OnInit {
           imgUrl: task.imgUrl,
           hidden: task.hidden,
         });
+        this.uploadedImageUrl = task.imgUrl;
       }
     });
   }

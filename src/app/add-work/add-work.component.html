@@ -58,12 +58,6 @@
 
     <!-- Image -->
     <label for="imgUrl">Task Image</label>
-    <input
-      id="imgUrl"
-      type="text"
-      formControlName="imgUrl"
-      placeholder="Upload Task Image URL"
-    />
     <ngx-file-drop
       dropZoneLabel="Drop files here"
       (onFileDrop)="dropped($event)"
@@ -89,7 +83,7 @@
       class="error-box"
       *ngIf="applyForm.get('imgUrl')?.hasError('required')"
     >
-      Image Link is required
+      Image is required
     </div>
 
     <!-- Hidden -->

@@ -1,70 +1,103 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+}
+
 .section-heading {
   font-size: 24px;
-  max-width: 400px;
-  margin: 0 auto;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  color: #333; /* Set your desired text color */
+  margin-bottom: 20px;
 }
 
 form {
-  max-width: 400px; /* Adjust the maximum width as needed */
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-  display: block;
+  font-size: 16px;
   margin-top: 10px;
-  font-size: 18px;
-  color: #555; /* Set your desired label text color */
 }
 
 input,
 textarea {
-  width: 100%;
   padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc; /* Set your desired input border color */
+  margin: 5px 0 15px;
+  border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
 }
 
 button.primary {
-  background-color: #3498db; /* Set your desired primary button color */
-  color: #fff; /* Set your desired text color */
+  background-color: #3e5c76; /* Color 2 */
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 button.primary:hover {
-  background-color: #2077b3; /* Set your desired button color on hover */
+  background-color: #2077b3;
 }
 
 .error-box {
-  background-color: #f0ebd8;
+  background-color: #f0ebd8; /* Color 1 */
   border: 1px solid #d3c0a9;
   border-radius: 5px;
   padding: 8px;
   margin-top: 5px;
   margin-bottom: 15px;
-  color: #333; /* Set your desired text color */
+  color: #333;
 }
 
+/* Checkbox Styles */
 .hidden-checkbox {
   display: flex;
-  align-items: center;
-  margin-top: 10px; /* Adjust margin as needed */
+  margin-top: 5px;
 }
 
 .checkbox-container {
-  position: relative;
-  margin-left: 10px; /* Adjust margin as needed */
+  display: flex;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+/* Uploaded Image Styles */
+.uploadedImgContainer {
+  text-align: center;
+  margin: 20px 0;
 }
 
 .uploadedImg {
-  width: 200px;
+  width: 150px;
+  margin-right: 1rem;
   height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  article {
+    margin: 10px;
+  }
 }

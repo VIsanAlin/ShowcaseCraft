@@ -1,4 +1,4 @@
-<section>
+<section class="content">
   <section class="btn-container">
     <section class="list-grid">
       <button (click)="toggleCustom()" [class.activeView]="showOnlyHidden">
@@ -53,7 +53,8 @@
     [ngClass]="{
       results: viewMode === 'grid' && !showOnlyHidden,
       'results-list-view': viewMode === 'list' && !showOnlyHidden,
-      'results-grid-view': viewMode === 'grid' && showOnlyHidden
+      'results-grid-view': viewMode === 'grid' && showOnlyHidden,
+      'results-list-hidden-view': viewMode === 'list' && showOnlyHidden
     }"
   >
     <app-display-work

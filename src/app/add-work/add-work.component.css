@@ -74,18 +74,13 @@ button.primary:hover {
 /* Checkbox Styles */
 .hidden-checkbox {
   display: flex;
-  align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .checkbox-container {
   display: flex;
-  align-items: center;
   margin-left: 10px;
-}
-
-.checkbox-container label {
-  margin-left: 5px;
+  margin-top: 5px;
 }
 
 /* Uploaded Image Styles */

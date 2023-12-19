@@ -33,7 +33,7 @@ export class HomeComponent {
         .getAllTasks()
         .then((displayWorkList: DisplayWork[]) => {
           this.displayWorkList = displayWorkList.filter(
-            (item) => item.hidden === true
+            (item) => item.hidden === false
           );
         });
     } else {

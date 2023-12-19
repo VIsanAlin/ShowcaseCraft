@@ -9,18 +9,18 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   template: `
     <section
-      class="listing"
+      class="task"
       [ngClass]="{ 'grid-view': isGridView, 'list-view': !isGridView }"
     >
       <img
-        class="listing-photo"
+        class="task-photo"
         [src]="displayWork.imgUrl"
         alt=" {{ displayWork.title }}"
         crossorigin
       />
       <div class="task-content">
-        <h2 class="listing-heading">{{ displayWork.title }}</h2>
-        <p class="listing-location">
+        <p class="task-title">{{ displayWork.title }}</p>
+        <p class="task-description">
           {{ displayWork.description }}
         </p>
         <a [href]="displayWork.linkUrl" target="_blank">Customer Link </a>

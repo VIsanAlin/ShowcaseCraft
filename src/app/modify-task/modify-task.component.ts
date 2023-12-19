@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
+import { WorkingService } from '../working.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import {
@@ -11,7 +12,18 @@ import {
   ValidationErrors,
   ValidatorFn,
 } from '@angular/forms';
-import { WorkingService } from '../working.service';
+
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpClientModule,
+} from '@angular/common/http';
+
+import {
+  NgxFileDropEntry,
+  NgxFileDropModule,
+  FileSystemFileEntry,
+} from 'ngx-file-drop';
 
 function isValidUrl(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -25,15 +37,77 @@ function isValidUrl(): ValidatorFn {
 @Component({
   selector: 'app-modify-task',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxFileDropModule,
+  ],
   templateUrl: './modify-task.component.html',
   styleUrl: './modify-task.component.css',
 })
 export class ModifyTaskComponent implements OnInit {
-  constructor(private router: Router, private workingService: WorkingService) {}
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private workingService: WorkingService
+  ) {}
   route: ActivatedRoute = inject(ActivatedRoute);
   DisplayWorkId = Number(this.route.snapshot.params['id']);
 
+  // Upload
+  public files: NgxFileDropEntry[] = [];
+  public uploadedImageUrl: string | undefined;
+
+  public dropped(files: NgxFileDropEntry[]) {
+    this.files = files;
+    for (const droppedFile of files) {
+      // Is it a file?
+      if (droppedFile.fileEntry.isFile) {
+        const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
+        fileEntry.file((file: File) => {
+          // Here you can access the real file
+          console.log(droppedFile.relativePath, file);
+          console.log(file.name);
+
+          // You could upload it like this:
+          const formData = new FormData();
+          formData.append('logo', file, droppedFile.relativePath);
+
+          // Headers
+          const headers = new HttpHeaders({
+            'security-token': 'mytoken',
+          });
+
+          this.http
+            .post('http://localhost:3005/upload', formData, {
+              headers: headers,
+              responseType: 'blob',
+            })
+            .subscribe((data: any) => {
+              this.uploadedImageUrl = `http://localhost:3005/uploads/${file.name}`;
+              this.modifyForm.patchValue({
+                imgUrl: this.uploadedImageUrl,
+              });
+            });
+        });
+      } else {
+        // It was a directory (empty directories are added, otherwise only files)
+        const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
+        console.log(droppedFile.relativePath, fileEntry);
+      }
+    }
+  }
+
+  public fileOver(event: any) {
+    console.log(event);
+  }
+
+  public fileLeave(event: any) {
+    console.log(event);
+  }
+
+  //Form
   modifyForm = new FormGroup({
     id: new FormControl(),
     title: new FormControl('', [Validators.required, Validators.maxLength(20)]),

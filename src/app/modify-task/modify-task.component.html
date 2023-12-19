@@ -39,7 +39,7 @@
     </div>
 
     <!-- Link -->
-    <label for="linkUrl">Task Link</label>
+    <label for="linkUrl">Task Customer Link</label>
     <input
       id="linkUrl"
       type="text"
@@ -60,13 +60,34 @@
     </div>
 
     <!-- Image -->
-    <label for="imgUrl">Task Images</label>
+    <label for="imgUrl">Task Image</label>
     <input
       id="imgUrl"
       type="text"
       formControlName="imgUrl"
       placeholder="Enter task image URL"
     />
+
+    <ngx-file-drop
+      dropZoneLabel="Drop files here"
+      (onFileDrop)="dropped($event)"
+      (onFileOver)="fileOver($event)"
+      (onFileLeave)="fileLeave($event)"
+    >
+      <ng-template
+        ngx-file-drop-content-tmp
+        let-openFileSelector="openFileSelector"
+      >
+        <div *ngIf="uploadedImageUrl">
+          <img
+            class="uploadedImg"
+            [src]="uploadedImageUrl"
+            alt="Uploaded Image"
+          />
+        </div>
+        <button type="button" (click)="openFileSelector()">Browse Files</button>
+      </ng-template>
+    </ngx-file-drop>
 
     <div
       class="error-box"
@@ -85,7 +106,7 @@
 
     <!-- Finish -->
     <button type="submit" class="primary" [disabled]="!modifyForm.valid">
-      Add new task
+      Modify the task
     </button>
   </form>
 </article>

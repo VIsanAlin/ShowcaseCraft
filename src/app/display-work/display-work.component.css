@@ -1,52 +1,87 @@
-.listing {
+.task {
   background: #f0ebd8;
-  border-radius: 30px;
-  padding-bottom: 30px;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  overflow: hidden;
 }
-.listing-heading {
+.task-title {
   color: #0d1321;
-  padding: 0 15px 0 15px;
+  font-size: large;
+  font-weight: bold;
+  padding: 15px;
+  margin: 0;
 }
-.listing-photo {
+.task-photo {
   height: 200px;
   width: 100%;
   object-fit: cover;
-  border-radius: 30px 30px 0 0;
+  border-radius: 15px 15px 0 0;
 }
-.listing-location {
-  padding: 0 15px 0 15px;
+.task-description {
+  padding: 15px;
+  margin: 0px;
+  height: 60px;
+  overflow: hidden;
+  white-space: pre-line;
 }
-
-section.listing a {
+.task a {
   display: block;
-  padding-left: 15px;
+  padding: 10px 15px;
   text-decoration: none;
   color: #3e5c76;
-}
-section.listing a::after {
-  content: "\203A";
-  margin-left: 5px;
+  border-top: 1px solid #ccc;
 }
 
 .list-view {
-  max-width: max-content;
-  height: 200px; /* Set a fixed height for the list-view section */
-  overflow: hidden; /* Hide content that exceeds the height */
+  max-width: 100%;
+  height: max-content;
+  overflow: hidden;
   margin: 0 auto;
   display: flex;
+}
+
+.list-view .task {
+  display: flex;
+  background: #f0ebd8;
+  border-radius: 15px;
+  overflow: hidden;
   margin-bottom: 20px;
 }
 
-.list-view > .listing-photo {
-  margin-top: 15px;
-  margin-left: 15px;
-  height: 100%; /* Ensure the image takes the full height of the list-view */
+.list-view .task-photo {
+  width: 35%;
   max-width: 35%;
-  border-radius: 15px 10px 15px 10px;
+  height: auto;
+  object-fit: cover;
+  padding: 15px;
+  padding-bottom: 0px;
+  border-radius: 30px 30px 30px 30px;
 }
 
-.list-view > .task-content {
-  margin-right: auto;
-  padding: 15px; /* Add padding to the task-content for better spacing */
-  box-sizing: border-box; /* Include padding in the element's total width and height */
+.list-view .task-content {
+  flex: 1;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.list-view .task-description {
+  max-height: 60px;
+  overflow: hidden;
+  white-space: pre-line;
+  margin: 0;
+}
+
+.list-view a {
+  display: block;
+  margin-top: 15px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #3e5c76;
+  border-top: 1px solid #ccc;
+}
+
+@media (max-width: 767px) {
+  .list-view .task-description {
+    height: 25px;
+  }
 }

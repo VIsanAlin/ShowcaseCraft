@@ -19,8 +19,6 @@ export class HomeComponent {
 
   toggleViewMode(mode: 'grid' | 'list') {
     this.viewMode = mode;
-
-    console.log(this.viewMode);
   }
 
   toggleCustom() {
@@ -28,7 +26,7 @@ export class HomeComponent {
 
     if (this.showOnlyHidden) {
       // If showOnlyHidden is true, filter the list to show only hidden items
-      console.log(this.viewMode);
+
       this.workingService
         .getAllTasks()
         .then((displayWorkList: DisplayWork[]) => {
@@ -44,8 +42,6 @@ export class HomeComponent {
           this.displayWorkList = displayWorkList;
         });
     }
-
-    console.log(this.showOnlyHidden);
   }
 
   constructor() {

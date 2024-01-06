@@ -2,10 +2,10 @@
   "tasks": [
     {
       "id": 595,
-      "title": "First Added Task",
-      "description": "This is a test for the first attempt to add a task",
+      "title": "Modifications",
+      "description": "Modifying some of the first tasks",
       "linkUrl": "https://gaming-platform-tawny.vercel.app",
-      "imgUrl": "https://i.ibb.co/5ry4Sx7/Ex2.png",
+      "imgUrl": "http://localhost:3005/uploads/gowragnarokv3.jpg",
       "hidden": false
     },
     {

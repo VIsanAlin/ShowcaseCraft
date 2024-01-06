@@ -33,7 +33,7 @@ export class WorkingService {
       imgUrl,
       hidden,
     };
-    console.log(`${newTask}`);
+
     await fetch(this.url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -61,7 +61,7 @@ export class WorkingService {
       imgUrl,
       hidden,
     };
-    console.log(`${updatedTask}`);
+
     const updatedUrl = `${this.url}/${id}`;
     await fetch(updatedUrl, {
       method: 'PUT',

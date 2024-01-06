@@ -67,8 +67,6 @@ export class ModifyTaskComponent implements OnInit {
         const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
         fileEntry.file((file: File) => {
           // Here you can access the real file
-          console.log(droppedFile.relativePath, file);
-          console.log(file.name);
 
           // You could upload it like this:
           const formData = new FormData();
@@ -94,7 +92,6 @@ export class ModifyTaskComponent implements OnInit {
       } else {
         // It was a directory (empty directories are added, otherwise only files)
         const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-        console.log(droppedFile.relativePath, fileEntry);
       }
     }
   }

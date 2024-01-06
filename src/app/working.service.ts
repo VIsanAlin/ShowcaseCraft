@@ -5,7 +5,7 @@ import { DisplayWork } from './displaywork';
   providedIn: 'root',
 })
 export class WorkingService {
-  url = 'http://localhost:3000/tasks';
+  url = 'http://localhost:3005/api/tasks';
 
   async getAllTasks(): Promise<DisplayWork[]> {
     const data = await fetch(this.url);

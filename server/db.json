@@ -1,0 +1,84 @@
+{
+  "tasks": [
+    {
+      "id": 595,
+      "title": "First Added Task",
+      "description": "This is a test for the first attempt to add a task",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "https://i.ibb.co/5ry4Sx7/Ex2.png",
+      "hidden": false
+    },
+    {
+      "id": 786,
+      "title": "Modified task",
+      "description": "This is a modified task after implementing : \n- responsiveness\n- upload image\n",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/fifa23v1.jpg",
+      "hidden": false
+    },
+    {
+      "id": 422,
+      "title": "Reverting back",
+      "description": "Reverting back before implementing filepond",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "https://i.ibb.co/vcWmb0Z/Ex1.png",
+      "hidden": false
+    },
+    {
+      "id": 845,
+      "title": "Upload Functional",
+      "description": "The upload is functional",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/witchitv3.jpg",
+      "hidden": true
+    },
+    {
+      "id": 967,
+      "title": "Entitled",
+      "description": "Description",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/eldenring1920vTitle.jpg",
+      "hidden": true
+    },
+    {
+      "id": 281,
+      "title": "NFS Task",
+      "description": "I am adding a new task ",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/nfsheattitle.png",
+      "hidden": true
+    },
+    {
+      "id": 990,
+      "title": "Adding a new task",
+      "description": "This is for testing :\n- responsiveness\n- functionality\n- etc\n\nLet us see if it works as intended.",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/animalcrossingv1.jpg",
+      "hidden": true
+    },
+    {
+      "id": 17,
+      "title": "This is the biggest ",
+      "description": "Testing what is going to look like\nFor the biggest Title\nAnd also trying for a bigger description\nTo see if responsiveness is looking good\nOr if is needed to improve\n",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/lastv3.jpg",
+      "hidden": false
+    },
+    {
+      "id": 831,
+      "title": "Last test",
+      "description": "This is going\nAnother test\nTo check Image functionality",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/mariov2.jpg",
+      "hidden": false
+    },
+    {
+      "id": 611,
+      "title": "Database And Server",
+      "description": "Adding the database\ndb.json\ninto the server functionality\nno need to --watch it anymore",
+      "linkUrl": "https://gaming-platform-tawny.vercel.app",
+      "imgUrl": "http://localhost:3005/uploads/hogwartsv2.jpg",
+      "hidden": false
+    }
+  ]
+}
